@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+
+set -efu
+
+data=$(cat "$(dirname $0)"/emoticons.txt)
+
+xdotool - <<<"type --clearmodifiers -- $(echo "$data" | dmenu | sed 's/ | .*//')"
+
+exit 0
